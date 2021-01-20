@@ -1,6 +1,7 @@
 package com.josardiaz.repository;
 
 import com.josardiaz.domain.Roulette;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
@@ -32,17 +33,17 @@ public class RouletteRepository implements RouletteRedisRepository {
 
     @Override
     public Roulette findById(String id) {
-        return null;
+        return (Roulette) hashOperations.get(KEY,id);
     }
 
     @Override
     public String save(Roulette roulette) {
-        hashOperations.put(KEY, UUID.randomUUID().toString(), roulette);
+        hashOperations.put(KEY,roulette.getId(), roulette);
         return roulette.getId();
     }
 
-    @Override
-    public void delete(Roulette roulette) {
-
+    public Roulette updateStatus(Roulette roulette){
+        save(roulette);
+        return roulette;
     }
 }

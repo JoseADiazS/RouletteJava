@@ -8,5 +8,5 @@ public interface RouletteRedisRepository {
     Map<String, Roulette> findAll();
     Roulette findById(String id);
     String save(Roulette roulette);
-    void delete(Roulette roulette);
+    Roulette updateStatus(Roulette roulette);
 }
