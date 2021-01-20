@@ -1,4 +1,5 @@
 package com.josardiaz.config;
+import com.josardiaz.domain.Roulette;
 import com.josardiaz.domain.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,10 +14,17 @@ public class RedisConfiguration {
     }
 
     @Bean
-    RedisTemplate<String, User> redisTemplate() {
+    RedisTemplate<String, User> redisTemplate2() {
         final RedisTemplate<String, User> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(jedisConnectionFactory());
         return redisTemplate;
     }
 
+    @Bean
+    RedisTemplate<String, Roulette> redisTemplate() {
+        final RedisTemplate<String, Roulette> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setConnectionFactory(jedisConnectionFactory());
+        return redisTemplate;
+    }
 }
+

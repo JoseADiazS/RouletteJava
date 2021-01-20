@@ -7,6 +7,6 @@ import java.util.Map;
 public interface RouletteRedisRepository {
     Map<String, Roulette> findAll();
     Roulette findById(String id);
-    void save(Roulette roulette);
+    String save(Roulette roulette);
     void delete(Roulette roulette);
 }

@@ -14,15 +14,15 @@ public class UserRepository implements UserRedisRepository{
 
     private static final String KEY = "User";
     private HashOperations hashOperations;
-    private RedisTemplate<String,User> redisTemplate;
+    private RedisTemplate<String,User> redisTemplate2;
 
-    public UserRepository(RedisTemplate<String, User> redisTemplate) {
-        this.redisTemplate = redisTemplate;
+    public UserRepository(RedisTemplate<String, User> redisTemplate2) {
+        this.redisTemplate2 = redisTemplate2;
     }
 
     @PostConstruct
     private void init(){
-        hashOperations = redisTemplate.opsForHash();
+        hashOperations = redisTemplate2.opsForHash();
     }
 
     @Override
