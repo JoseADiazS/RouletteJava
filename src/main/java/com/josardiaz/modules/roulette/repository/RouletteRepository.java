@@ -5,8 +5,7 @@ import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.PostConstruct;
-import java.util.Map;
+import java.util.List;
 
 @Repository
 public class RouletteRepository implements RouletteRedisRepository {
@@ -15,18 +14,15 @@ public class RouletteRepository implements RouletteRedisRepository {
     private HashOperations hashOperations;
     private RedisTemplate<String, Roulette> redisTemplate;
 
-    public RouletteRepository(RedisTemplate<String, Roulette> redisTemplate) {
-        this.redisTemplate = redisTemplate;
-    }
+    public RouletteRepository(RedisTemplate redisTemplate) {
 
-    @PostConstruct
-    private void init(){
+        this.redisTemplate = redisTemplate;
         hashOperations = redisTemplate.opsForHash();
     }
 
     @Override
-    public Map<String, Roulette> findAll() {
-        return hashOperations.entries(KEY);
+    public List findAll() {
+        return hashOperations.values(KEY);
     }
 
     @Override
@@ -43,5 +39,10 @@ public class RouletteRepository implements RouletteRedisRepository {
     @Override
     public void delete(Roulette roulette) {
 
+    }
+
+    public Roulette updateStatus(Roulette entity){
+        save(entity);
+        return entity;
     }
 }

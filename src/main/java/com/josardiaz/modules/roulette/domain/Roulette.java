@@ -1,10 +1,12 @@
 package com.josardiaz.modules.roulette.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
 
 import java.io.Serializable;
 import java.util.LinkedList;
 
+@RedisHash("Roulette")
 public class Roulette implements Serializable {
 
     @Id
