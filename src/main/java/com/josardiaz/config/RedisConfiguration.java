@@ -1,6 +1,6 @@
 package com.josardiaz.config;
-import com.josardiaz.modules.roulette.domain.Roulette;
-import com.josardiaz.modules.user.domain.User;
+import com.josardiaz.domain.Roulette;
+import com.josardiaz.domain.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
