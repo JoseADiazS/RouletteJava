@@ -1,6 +1,6 @@
-package com.josardiaz.repository;
+package com.josardiaz.modules.user.repository;
 
-import com.josardiaz.domain.User;
+import com.josardiaz.modules.user.domain.User;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;

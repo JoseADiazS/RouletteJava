@@ -1,7 +1,7 @@
-package com.josardiaz.controller;
+package com.josardiaz.modules.user.controller;
 
-import com.josardiaz.domain.User;
-import com.josardiaz.repository.UserRepository;
+import com.josardiaz.modules.user.domain.User;
+import com.josardiaz.modules.user.repository.UserRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,10 +1,13 @@
-package com.josardiaz.domain;
+package com.josardiaz.modules.roulette.domain;
+
+import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
 import java.util.LinkedList;
 
 public class Roulette implements Serializable {
 
+    @Id
     private String id;
     private boolean status;
     private LinkedList<Bet> bets = new LinkedList<>();

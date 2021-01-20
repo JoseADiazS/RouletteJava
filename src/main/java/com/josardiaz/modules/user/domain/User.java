@@ -1,14 +1,14 @@
-package com.josardiaz.domain;
+package com.josardiaz.modules.user.domain;
 
 import java.io.Serializable;
 
-public class Bet implements Serializable {
+public class User implements Serializable {
 
     private String id;
     private String userName;
     private double balance;
 
-    public Bet(String id, String userName, double balance) {
+    public User(String id, String userName, double balance) {
         this.id = id;
         this.userName = userName;
         this.balance = balance;
@@ -37,4 +37,6 @@ public class Bet implements Serializable {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+
+
 }

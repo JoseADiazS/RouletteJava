@@ -1,6 +1,6 @@
-package com.josardiaz.repository;
+package com.josardiaz.modules.user.repository;
 
-import com.josardiaz.domain.User;
+import com.josardiaz.modules.user.domain.User;
 
 import java.util.Map;
 

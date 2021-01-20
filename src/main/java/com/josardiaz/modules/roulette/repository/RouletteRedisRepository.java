@@ -1,6 +1,6 @@
-package com.josardiaz.repository;
+package com.josardiaz.modules.roulette.repository;
 
-import com.josardiaz.domain.Roulette;
+import com.josardiaz.modules.roulette.domain.Roulette;
 
 import java.util.Map;
 

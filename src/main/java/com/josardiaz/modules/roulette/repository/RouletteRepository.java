@@ -1,13 +1,12 @@
-package com.josardiaz.repository;
+package com.josardiaz.modules.roulette.repository;
 
-import com.josardiaz.domain.Roulette;
+import com.josardiaz.modules.roulette.domain.Roulette;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import java.util.Map;
-import java.util.UUID;
 
 @Repository
 public class RouletteRepository implements RouletteRedisRepository {
@@ -37,7 +36,7 @@ public class RouletteRepository implements RouletteRedisRepository {
 
     @Override
     public String save(Roulette roulette) {
-        hashOperations.put(KEY, UUID.randomUUID().toString(), roulette);
+        hashOperations.put(KEY, roulette.getId(), roulette);
         return roulette.getId();
     }
 
