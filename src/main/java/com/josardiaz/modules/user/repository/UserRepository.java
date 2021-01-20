@@ -38,6 +38,7 @@ public class UserRepository implements UserRedisRepository{
 
     @Override
     public void save(User user) {
+
         hashOperations.put(KEY, UUID.randomUUID().toString(), user);
     }
 
