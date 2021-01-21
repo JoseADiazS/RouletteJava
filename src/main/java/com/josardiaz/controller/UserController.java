@@ -1,18 +1,26 @@
 package com.josardiaz.controller;
 
+import com.josardiaz.domain.Roulette;
 import com.josardiaz.domain.User;
 import com.josardiaz.repository.UserRepository;
+import com.josardiaz.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Map;
 
 @RestController
 public class UserController implements Serializable {
+    @Autowired
     public UserRepository userRepository;
+
+    @Autowired
+    public UserService userService;
 
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -25,6 +33,6 @@ public class UserController implements Serializable {
 
     @PostMapping("/user")
     public void createUser(@RequestBody User user){
-        userRepository.save(user);
+        userService.save(user);
     }
 }
