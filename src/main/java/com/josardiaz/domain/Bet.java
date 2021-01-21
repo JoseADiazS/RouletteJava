@@ -5,12 +5,12 @@ import java.io.Serializable;
 public class Bet implements Serializable {
 
     private String id;
-    private String userName;
+    private User user;
     private double balance;
 
-    public Bet(String id, String userName, double balance) {
+    public Bet(String id, User user, double balance) {
         this.id = id;
-        this.userName = userName;
+        this.user = user;
         this.balance = balance;
     }
 
@@ -22,12 +22,12 @@ public class Bet implements Serializable {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public User getUser() {
+        return user;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.user = user;
     }
 
     public double getBalance() {

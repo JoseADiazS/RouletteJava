@@ -20,7 +20,7 @@ public class Roulette implements Serializable {
         this.id = id;
     }
 
-    public boolean isStatus() {
+    public boolean getStatus() {
         return status;
     }
 
