@@ -7,14 +7,13 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import java.util.Map;
-import java.util.UUID;
 
 @Repository
 public class UserRepository implements UserRedisRepository{
 
     private static final String KEY = "User";
     private HashOperations hashOperations;
-    private RedisTemplate<String,User> redisTemplate2;
+    private final RedisTemplate<String,User> redisTemplate2;
 
     public UserRepository(RedisTemplate<String, User> redisTemplate2) {
         this.redisTemplate2 = redisTemplate2;
@@ -26,7 +25,7 @@ public class UserRepository implements UserRedisRepository{
     }
 
     @Override
-    public Map<String, User> findAll() {
+    public Map<String,User> findAll() {
         return hashOperations.entries(KEY);
     }
 
@@ -37,9 +36,9 @@ public class UserRepository implements UserRedisRepository{
     }
 
     @Override
-    public void save(User user) {
-
-        hashOperations.put(KEY, UUID.randomUUID().toString(), user);
+    public String save(User user) {
+        hashOperations.put(KEY, user.getId(), user);
+        return user.getId();
     }
 
     @Override

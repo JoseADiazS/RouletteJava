@@ -5,11 +5,8 @@ import com.josardiaz.domain.Roulette;
 import com.josardiaz.repository.RouletteRepository;
 import com.josardiaz.services.RouletteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.Serializable;
 import java.util.Map;
 

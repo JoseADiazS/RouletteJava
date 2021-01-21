@@ -1,6 +1,5 @@
 package com.josardiaz.controller;
 
-import com.josardiaz.domain.Roulette;
 import com.josardiaz.domain.User;
 import com.josardiaz.repository.UserRepository;
 import com.josardiaz.services.UserService;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Map;
 
 @RestController

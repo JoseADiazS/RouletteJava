@@ -1,21 +1,19 @@
 package com.josardiaz.repository;
 
 import com.josardiaz.domain.Roulette;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import java.util.Map;
-import java.util.UUID;
 
 @Repository
 public class RouletteRepository implements RouletteRedisRepository {
 
     private static final String KEY = "Roulette";
     private HashOperations hashOperations;
-    private RedisTemplate<String, Roulette> redisTemplate;
+    private final RedisTemplate<String, Roulette> redisTemplate;
 
     public RouletteRepository(RedisTemplate<String, Roulette> redisTemplate) {
         this.redisTemplate = redisTemplate;
