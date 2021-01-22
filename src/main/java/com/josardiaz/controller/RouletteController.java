@@ -1,6 +1,7 @@
 package com.josardiaz.controller;
 
 import com.josardiaz.config.BetInput;
+import com.josardiaz.domain.BetOutput;
 import com.josardiaz.domain.Roulette;
 import com.josardiaz.repository.RouletteRepository;
 import com.josardiaz.services.RouletteService;
@@ -43,5 +44,9 @@ public class RouletteController implements Serializable {
                       @RequestBody BetInput betInput) throws Exception {
         return rouletteService.bet(id, userId, betInput);
 
+    }
+    @GetMapping("/roulette/close/{id}")
+    public Map<String, BetOutput> closeRoulette(@PathVariable(value = "id") String id) throws Exception {
+        return rouletteService.closing(id);
     }
 }
