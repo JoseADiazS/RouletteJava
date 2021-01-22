@@ -146,6 +146,12 @@ public class RouletteService {
         }
         Map<String, BetOutput> result = new LinkedHashMap<>();
         result.put("result", new BetOutput(resultNum, colors.getColor(), winners.size(), losers.size(), winners, losers));
+        for (Bet bets: roulette.getBets()){
+            bets.getUser().setBalance(bets.getUser().getBalance());
+        }
+        LinkedList<Bet> bet = new LinkedList<>();
+        roulette.setBets(bet);
+        repository.save(roulette);
         return result;
     }
 
