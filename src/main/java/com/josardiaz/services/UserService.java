@@ -15,6 +15,7 @@ public class UserService {
 
     public String save(User user){
         user.setId(UUID.randomUUID().toString());
-        return repository.save(user);
+        repository.save(user);
+        return user.getId();
     }
 }
