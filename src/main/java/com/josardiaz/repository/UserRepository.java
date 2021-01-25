@@ -29,7 +29,6 @@ public class UserRepository implements UserRedisRepository{
         return hashOperations.entries(KEY);
     }
 
-    // Here later we can change for User user
     @Override
     public User findById(String id) {
         return (User) hashOperations.get(KEY,id);

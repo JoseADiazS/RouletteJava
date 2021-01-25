@@ -9,11 +9,6 @@ public class Roulette implements Serializable {
     private boolean status;
     private LinkedList<Bet> bets = new LinkedList<>();
 
-    // Java Longs ends with L
-    // This variable prevents this exception:
-    // ava.io.InvalidClassException: com.josardiaz.domain.Roulette;
-    // local class incompatible: stream classdesc serialVersionUID = -3764582127773480896,
-    // local class serialVersionUID = 6543487073555988897
     private static final long serialVersionUID = -3764582127773480896L;
 
     public Roulette() {
