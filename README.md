@@ -12,7 +12,7 @@ Este Endpoint retornara el id de la ruleta creada:
 > 
 > RESULTADO:
 >
->>f5667cd6-eb1c-4f02-8d18-5cc4ea169ec6
+>>5d741683-64f7-4a7d-9728-740ba6605249
 
 ### 2. Endpoint de apertura de ruleta dado el id
 Este Endpoint permitira las posteriores peticiones de apuestas, retorna la confirmacion de estado de la ruleta
@@ -106,7 +106,7 @@ Este Enpoint retornara el listado de las ruletas creadas con su estado (True => 
 
 >[GET] localhost:8080/roulette
 > 
->> Resultado
+>> RESULTADO:
 >> <br><br>
 >> ```json
 >> {
@@ -122,3 +122,34 @@ Este Enpoint retornara el listado de las ruletas creadas con su estado (True => 
 >>    }
 >>}
 >> ```
+### 6. Endpoint de Creacion de usuario
+Este endpoint generara un nuevo usuario.
+Recibe como parametro un nombre de usuario y balance de dinero.
+> [POST] localhost:8080/user
+>> BODY:
+>>```json
+>>{
+>>    "userName": "Jose Armando Diaz",
+>>    "balance": "100"
+>>}
+### 7. Endpoint de listado de usuarios
+Este endpoint retornara la lista de usarios con sus datos y balance.
+> [GET] localhost:8080/user
+>>```json
+>>{
+>>    "40420815-e68c-4d81-85de-5f9397f3891f": {
+>>        "id": "40420815-e68c-4d81-85de-5f9397f3891f",
+>>        "userName": "Jose Armando Diaz",
+>>        "balance": 100.0
+>>    },
+>>    "e9fc7453-26ff-4705-a8c7-3344f536e9e2": {
+>>        "id": "e9fc7453-26ff-4705-a8c7-3344f536e9e2",
+>>        "userName": "Jose Diaz",
+>>        "balance": 100000.0
+>>    },
+>>    "272c5f96-9704-4a9e-9171-3b44e8e08cca": {
+>>        "id": "272c5f96-9704-4a9e-9171-3b44e8e08cca",
+>>        "userName": "Jose Diaz",
+>>        "balance": 99965.0
+>>    }
+>>}  
