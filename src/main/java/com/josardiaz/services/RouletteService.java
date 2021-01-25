@@ -29,16 +29,11 @@ public class RouletteService {
 
 
     public String save(Roulette roulette) {
-//        LinkedList<Bet> bets = new LinkedList<>();
-//        User user = new User("test","test",12);
-//        Bet bet = new Bet(UUID.randomUUID().toString(),user.getUserName(),3);
-//        bets.add(bet);
         if (roulette == null) {
             roulette = new Roulette();
             roulette.setStatus(Boolean.FALSE);
         }
         roulette.setId(UUID.randomUUID().toString());
-//        roulette.setBets(bets);
         return repository.save(roulette);
     }
 
